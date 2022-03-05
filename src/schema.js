@@ -6,7 +6,7 @@ const schema = buildSchema(`
     firstName: String
     lastName: String
     gender: String
-    email: [email]!
+    email: String
   }
   type email {
     email: String
@@ -14,6 +14,16 @@ const schema = buildSchema(`
   type Query {
     hello: String
     friend: Friend
+  }
+  input FriendInput {
+    id: ID,
+    firstName: String
+    lastName: String
+    gender: String
+    email: String
+  }
+  type Mutation {
+    createFriend(input: FriendInput): Friend
   }
 `);
 
