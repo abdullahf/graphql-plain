@@ -8,9 +8,17 @@ const typeDefs = `
     lastName: String
     gender: String
     email: String
+    age: Int
+    contacts: [Contact]
   }
-  type email {
-    email: String
+  type Contact {
+    firstName: String
+    lastName: String
+  }
+  enum Gender {
+    MALE
+    FEMALE
+    OTHER
   }
   type Query {
     hello: String
@@ -22,6 +30,7 @@ const typeDefs = `
     lastName: String
     gender: String
     email: String
+    age: Int
   }
   type Mutation {
     createFriend(input: FriendInput): Friend
