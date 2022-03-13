@@ -1,11 +1,11 @@
 import express from "express";
-import { schema } from "./schema";
 import { graphqlHTTP } from "express-graphql";
+import { schema } from "./schema";
 
 const app = express();
 
 app.get("/", (req, res) => {
-  res.send("<h1>Express server running!</h1>");
+  res.send("Graphql is amazing!");
 });
 
 app.use(
@@ -16,4 +16,6 @@ app.use(
   })
 );
 
-app.listen(8080, () => "Listening to port 8080.");
+app.listen(8080, () =>
+  console.log("Running server on port http://localhost:8080/graphql")
+);
